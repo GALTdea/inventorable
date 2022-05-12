@@ -1,22 +1,16 @@
 <div id="<%= dom_id item %>">
-  <p>
-    <strong>Name:</strong>
-    <%= item.name %>
-  </p>
+<table id="customers">
+  <tr>
+    <th>Item Name</th>
+    <th>Description</th>
+    <th>City</th>
+  </tr>
 
-  <p>
-    <strong>Description:</strong>
-    <%= item.description %>
-  </p>
-
-  <p>
-    <strong>quantity:</strong>
-    <%= item.quantity %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= item.city_id %>
-  </p>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.description %></td>
+    <td><%= item.city_id %></td>
+  </tr>
+</table>
 
 </div>

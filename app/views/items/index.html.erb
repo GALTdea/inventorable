@@ -3,12 +3,26 @@
 <h1>Items</h1>
 
 <div id="items">
+  <table id="customers">
+    <tr>
+      <th>Item Name</th>
+      <th>Description</th>
+      <th>City</th>
+      <th>links</th>
+    </tr>
+
   <% @items.each do |item| %>
-    <%= render item %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.description %></td>
+      <td><%= item.city_id %></td>
+      <td>   <%= link_to "Show this item", item %></td>
+    </tr>
     <p>
-      <%= link_to "Show this item", item %>
+   
     </p>
   <% end %>
+    </table>
 </div>
 
 <%= link_to "New item", new_item_path %>
