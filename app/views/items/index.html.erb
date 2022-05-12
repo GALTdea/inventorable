@@ -15,8 +15,8 @@
     <tr>
       <td><%= item.name %></td>
       <td><%= item.description %></td>
-      <td><%= item.city_id %></td>
-      <td>   <%= link_to "Show this item", item %></td>
+      <td><%= link_to item.city.name, city_path(item) %></td>
+      <td><%= link_to "Show this item", item %></td>
     </tr>
     <p>
    
