@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .container {
+  font-family: arial;
+  font-size: 24px;
+  margin: 25px;
+  width: 100%;
+  height: 70px;
+  /* outline: dashed 1px black; */
+  display: flex;
+  justify-content: center;
+}
+
+.links {
+  /* Center horizontally*/
+  text-align: center;
+}
