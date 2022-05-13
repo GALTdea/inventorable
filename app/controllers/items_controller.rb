@@ -1,8 +1,19 @@
+# require 'uri'
+require 'net/http'
+
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
   protect_from_forgery with: :null_session, only: [:create]
+
   # GET /items or /items.json
   def index
+    url = "https://api.openweathermap.org/data/2.5/weather?lat=33.840763&lon=-118.345413&appid=2d29671ab8b2ba1d5c84be1d9f943c35"
+    uri = URI(url)
+    response = Net::HTTP.get_response(uri)
+    @data = JSON.parse(response.body)
+    # raise 
+    puts response.body if response.is_a?(Net::HTTPSuccess)
+    
     @items = Item.all
   end
 

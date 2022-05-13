@@ -1,5 +1,8 @@
 <p style="color: green"><%= notice %></p>
-
+<div>
+ 
+  <%#=  @data["weather"].first["main"] %>
+</div>
 <h1>Items</h1>
 
 <div id="items">
@@ -8,21 +11,23 @@
       <th>Item Name</th>
       <th>Description</th>
       <th>City</th>
+      <th>Weather Description</th>
       <th>links</th>
     </tr>
 
-  <% @items.each do |item| %>
-    <tr>
-      <td><%= item.name %></td>
-      <td><%= item.description %></td>
-      <td><%= link_to item.city.name, city_path(item) %></td>
-      <td><%= link_to "Show this item", item %></td>
-    </tr>
-    <p>
-   
-    </p>
-  <% end %>
-    </table>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.description %></td>
+        <td><%= link_to item.city.name, city_path(item) %></td>
+        <td><%= @data['weather'].first["main"]  %></td>
+        <td><%= link_to "Show this item", item %></td>
+      </tr>
+      <p>
+    
+      </p>
+    <% end %>
+  </table>
 </div>
 
 <%= link_to "New item", new_item_path %>

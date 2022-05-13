@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[ show edit update destroy ]
-  protect_from_forgery with: :null_session, only: [:create]
+  protect_from_forgery with: :null_session, only: [:create, :update, :destroy]
   # GET /cities or /cities.json
   def index
     @cities = City.all
@@ -65,6 +65,6 @@ class CitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def city_params
-      params.require(:city).permit(:name, :weather, :description)
+      params.require(:city).permit(:name, :weather, :description, :longitude, :latitude)
     end
 end

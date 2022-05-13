@@ -14,8 +14,14 @@
  *= require_self
  */
 
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 35px;
+  padding-right: 35px;
+}
 
- .container {
+ .card {
   font-family: arial;
   font-size: 24px;
   margin: 25px;
