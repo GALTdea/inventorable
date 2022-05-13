@@ -7,9 +7,9 @@
   <p>
     <strong>Weather:</strong>
     <%#= city.weather %> <br>
-  
-    <%= item.city.latitude %>
-    <%= item.city.longitude %>
+    <img src="http://openweathermap.org/img/wn/<%#= item.city.weather_data['weather'].first['icon'] %>@2x.png" alt="">
+    <%= item.city.weather_data['weather'].first["main"] %> <br>
+    <%= item.city.weather_data['main']["temp"] %>
   </p>
 
   <p>
