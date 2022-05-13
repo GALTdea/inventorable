@@ -60,3 +60,12 @@
   background-color: #04AA6D;
   color: white;
 }
+
+
+
+/* break line */
+br {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}

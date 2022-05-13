@@ -8,6 +8,10 @@ class ItemsController < ApplicationController
   # GET /items or /items.json
   def index
     url = "https://api.openweathermap.org/data/2.5/weather?lat=33.840763&lon=-118.345413&appid=2d29671ab8b2ba1d5c84be1d9f943c35"
+    # "https://api.openweathermap.org/data/2.5/weather?q=London"
+
+
+    
     uri = URI(url)
     response = Net::HTTP.get_response(uri)
     @data = JSON.parse(response.body)
