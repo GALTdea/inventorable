@@ -3,7 +3,7 @@ class City < ApplicationRecord
   # geocode_by_city_and_state :address => :city_state
   geocoded_by :name, if: :name_changed?
 
-  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
+  after_validation :geocode, if: ->(obj){ obj.name.present? and obj.name_changed? }
 
   validates :name, presence: true, uniqueness: true
 
