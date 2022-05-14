@@ -1,7 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
 <h3 class="header">Inventorable</h3>
-
 <div id="items">
   <table id="customers">
     <tr>
@@ -17,13 +16,11 @@
         <td><%= item.description %></td>
         <td><%= link_to item.city.name, city_path(item) %></td>
         <td>  
-          <img src="http://openweathermap.org/img/wn/<%#= item.city.weather_data['weather'].first['icon'] %>@2x.png" alt="">
           <%= item.city.weather_data['weather'].first["main"] %> 
           <%= item.city.weather_data['main']["temp"] %> F
         </td>
         <td> <div class="small"> <%= link_to "Show", item %> || <%= link_to "Edit", edit_item_path(item) %> || <%= link_to "Destroy", item_path(item), :method => :delete  %> </div> </td>
       </tr>
-
     <% end %>
   </table>
 </div>

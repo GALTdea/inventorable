@@ -1,6 +1,18 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
+require 'faker'
+
+100.times do
+  items = Item.create(
+    name: "#{Faker::Commerce.product_name}",
+    description: "#{Faker::Lorem.paragraph}",
+    city_id: rand(1..5),
+    quantity: rand(1..1000),
+  )
+  items.save
+end
+
 
 Items = Item.create([
   {name: "Tomatoes", description: "Red and Juicy", city_id: City.last.id, quantity: 15678},

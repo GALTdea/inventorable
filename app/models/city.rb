@@ -1,12 +1,15 @@
 require 'net/http'
 class City < ApplicationRecord
   # geocode_by_city_and_state :address => :city_state
-  geocoded_by :name
+  geocoded_by :name, if: :name_changed?
+
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
   validates :name, presence: true, uniqueness: true
 
-
+  # def address_changed?
+  #   name_changed?
+  # end
 
   def address
     [name]
