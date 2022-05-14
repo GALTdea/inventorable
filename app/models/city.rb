@@ -7,18 +7,17 @@ class City < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
 
-  # def address_changed?
-  #   name_changed?
-  # end
-
-  def address
-    [name]
-  end
 
   def weather_data
-    url = "https://api.openweathermap.org/data/2.5/weather?lat=#{self.latitude}&lon=#{self.longitude}&units=imperial&appid=2d29671ab8b2ba1d5c84be1d9f943c35"
-    uri = URI(url)
-    response = Net::HTTP.get_response(uri)
+    Rails.cache.fetch("#{cache_key_with_version}/weather_data", expires_in: 12.hours) do
+      url = "https://api.openweathermap.org/data/2.5/weather?lat=#{self.latitude}&lon=#{self.longitude}&units=imperial&appid=2d29671ab8b2ba1d5c84be1d9f943c35"
+      uri = URI(url)
+      response = Net::HTTP.get_response(uri)
       JSON.parse(response.body)
+    end
   end
+
+
+
+
 end
