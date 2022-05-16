@@ -13,9 +13,10 @@
     <div class="container">
       <nav class="">
         <div class="">
-         <h5><%= link_to "View Items", items_path %></h5> 
-         <h5> <%= link_to "View Cities", cities_path %></h5> 
-         <h5> <%= link_to "New item", new_item_path %></h5> 
+         <Span class="navbar"><%= link_to "View Items", items_path %></Span> 
+         <Span class="navbar"> <%= link_to "View Cities", cities_path %></Span> 
+         <Span class="navbar"> <%= link_to "Add New Items", new_item_path %></Span>
+         <Span class="navbar"> <%= link_to "Add New Cities", new_city_path %></Span>
         </div>
       </nav>
       <%= yield %>
