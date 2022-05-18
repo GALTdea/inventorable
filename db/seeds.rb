@@ -13,7 +13,6 @@ require 'faker'
   items.save
 end
 
-
 Items = Item.create([
   {name: "Tomatoes", description: "Red and Juicy", city_id: City.last.id, quantity: 15678},
   {name: "Bananas", description: "Yellow", city_id:  City.find_by(name: "Seattle").id, quantity: 34567},
@@ -28,9 +27,6 @@ Items = Item.create([
   {name: "Monitors", description: "For your office", city_id:  City.find_by(name: "Torrance").id, quantity: 678},
   {name: "Pencils", description: "Mechanical", city_id:  City.find_by(name: "Seattle").id, quantity: 100000 }
 ])
-
-
-
 # la
 # latitude: 34.052235
 # longitude: -118.243683 

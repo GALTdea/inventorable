@@ -1,20 +1,18 @@
 <div id="<%= dom_id item %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Item:</strong>
     <%= item.name %>
   </p>
 
   <p>
-    <strong>Weather:</strong>
-    <%#= city.weather %> <br>
-    <img src="http://openweathermap.org/img/wn/<%#= item.city.weather_data['weather'].first['icon'] %>@2x.png" alt="">
+    <strong>Location City Current Weather:</strong> <br>
     <%= item.city.weather_data['weather'].first["main"] %> <br>
-    <%= item.city.weather_data['main']["temp"] %>
+    <%= item.city.weather_data['main']["temp"] %> F
   </p>
 
   <p>
-    <strong>Description:</strong>
-    <%#= city.description %>
+    <strong>Total Items:</strong>
+    <%= item.quantity %>
   </p>
 
 

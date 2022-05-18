@@ -1,4 +1,5 @@
-# Rails on Replit
+# Rails on Replit 
+
 
 This is a template to get you started with Rails on Replit. It's ready to go so you can just hit run and start coding!
 
@@ -20,6 +21,8 @@ Start every command with `bundle exec` so that it runs in the context of the ins
 
 SQLite would work in development but we don't recommend running it in production. Instead look into using the built-in [Replit database](http://docs.replit.com/misc/database). Otherwise you are welcome to connect databases from your favorite provider. 
 
+## Seed
+run bin/rails db:seed to load the data needed
 ## Help
 
 If you need help you might be able to find an answer on our [docs](https://docs.replit.com) page. Alternatively you can [ask in the community](https://replit.com/talk/ask). Feel free to report bugs [here](https://replit.com/bugs) and give us feedback [here](https://Replit/feedback).
